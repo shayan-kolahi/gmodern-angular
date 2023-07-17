@@ -1,3 +1,37 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import "./assets/scss/fonts";
+@import "./assets/scss/variables";
+
+body ,
+html {
+  font-family: $font-family-1;
+  overflow-x: hidden;
+  direction: rtl;
+  min-height: 100vh;
+  background: #F6F6F6;
+  scrollbar-color: var(--mainColor) #fff;
+  scrollbar-width: thin;
+}
+main ,
+.content_tech {
+  min-height: 100vh;
+}
+::-webkit-scrollbar-track {
+  background-color: #fff;
+  border-radius: 10px;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: #fff;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: var(--mainColor);
+}
+::selection {
+  color: #fff;
+  background: var(--mainColor);
+}

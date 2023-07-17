@@ -10,15 +10,18 @@ module.exports = {
     },
     extend: {
       colors: {
-        first_color : '#0A2647',
-        second_color :'#144272',
-        third_color :'#205295',
-        fourth_color :'#2C74B3',
+        first_color : '#ee2c57',
+        second_color :'#9b0f2e',
       }
     },
     container: {
       center: true,
+      padding: '15px',
       screens: {
+        sm: '540px',
+        md: '720px',
+        lg: '960px',
+        xl: '1140px',
         '2xl': '1140px',
       },
     },
