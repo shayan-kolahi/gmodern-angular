@@ -5,44 +5,28 @@
       <div class="space-y-4 md:space-y-6">
         <div>
           <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">ایمیل</label>
-          <input type="email"
+          <input type="text"
                  name="email"
                  id="email"
                  class="input input-bordered w-full focus:outline-0"
-                 placeholder="email@gmail.com">
+                 placeholder="email@gmail.com"
+                 [(ngModel)]="email">
         </div>
         <div>
-          <label for="password"
-                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-            کلمه عبور
-          </label>
+          <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">کلمه عبور</label>
           <input type="password"
                  name="password"
                  id="password"
                  placeholder="••••••••"
-                 class="input input-bordered w-full focus:outline-0">
-        </div>
-        <div class="flex items-center justify-between">
-          <div class="flex items-start cursor-pointer">
-            <div class="cursor-pointer flex items-center h-5">
-              <input id="remember"
-                     aria-describedby="remember"
-                     type="checkbox"
-                     class="cursor-pointer w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800">
-            </div>
-            <div class="cursor-pointer pr-3 text-sm">
-              <label for="remember" class="cursor-pointer text-gray-500 dark:text-gray-300">
-                مرا به خاطر بسپار
-              </label>
-            </div>
-          </div>
-          <a routerLink="/auth/forgot-password" class="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500">
-            فراموشی کلمه عبور
-          </a>
+                 class="input input-bordered w-full focus:outline-0"
+                 [(ngModel)]="password">
         </div>
         <button type="submit"
-                class="btn btn-info w-full">
-          ورود
+                class="btn btn-info w-full"
+                (click)="submit()"
+                [disabled]="loading">
+          <span *ngIf="loading" class="loading loading-spinner"></span>
+          <span *ngIf="!loading">ورود</span>
         </button>
         <p class="text-sm font-light text-gray-500 dark:text-gray-400">
           حساب کاربری ندارید؟
@@ -55,4 +39,4 @@
     </div>
   </div>
 </section>
-<!--<p-toast></p-toast>-->
+<p-toast></p-toast>

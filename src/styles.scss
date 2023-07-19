@@ -29,13 +29,18 @@ main {
 }
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background-color: var(--mainColor);
+  background-color: $mainColor;
 }
 ::selection {
   color: #fff;
-  background: var(--mainColor);
+  background: $mainColor;
 }
-
+.p-toast .p-toast-message .p-toast-message-content .p-toast-message-text {
+  margin: 0 1rem 0 0;
+}
+.p-toast .p-toast-message .p-toast-message-content{
+  font-family: $font-family-1 !important;
+}
 
 @media (max-width: 992px) {
   main {
