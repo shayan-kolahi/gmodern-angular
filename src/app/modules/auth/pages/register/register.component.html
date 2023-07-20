@@ -9,7 +9,8 @@
                    name="name"
                    id="name"
                    class="input input-bordered w-full focus:outline-0"
-                   placeholder="نام و نام خانوادگی">
+                   placeholder="نام و نام خانوادگی"
+                   [(ngModel)]="name">
           </div>
           <div>
             <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">ایمیل</label>
@@ -17,7 +18,8 @@
                    name="email"
                    id="email"
                    class="input input-bordered w-full focus:outline-0"
-                   placeholder="email@gmail.com">
+                   placeholder="email@gmail.com"
+                   [(ngModel)]="email">
           </div>
           <div>
             <label for="password"
@@ -28,11 +30,15 @@
                    name="password"
                    id="password"
                    placeholder="••••••••"
-                   class="input input-bordered w-full focus:outline-0">
+                   class="input input-bordered w-full focus:outline-0"
+                   [(ngModel)]="password">
           </div>
           <button type="submit"
-                  class="btn btn-info w-full">
-            <span>بعدی</span>
+                  class="btn btn-info w-full"
+                  (click)="submit()"
+                  [disabled]="loading">
+            <span *ngIf="loading" class="loading loading-spinner"></span>
+            <span *ngIf="!loading">ورود</span>
           </button>
           <p class="text-sm font-light text-gray-500 dark:text-gray-400">
             قبلا ثبت نام کرده اید؟
@@ -45,4 +51,4 @@
     </div>
   </div>
 </section>
-<!--<p-toast></p-toast>-->
+<p-toast></p-toast>
