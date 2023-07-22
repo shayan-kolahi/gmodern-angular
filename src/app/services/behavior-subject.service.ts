@@ -5,6 +5,6 @@ import {BehaviorSubject} from "rxjs";
   providedIn: 'root'
 })
 export class BehaviorSubjectService {
-  onChanged: BehaviorSubject<any> = new BehaviorSubject<any>(null);
+  localStorage_token: BehaviorSubject<any> = new BehaviorSubject<any>(null);
   constructor() { }
 }

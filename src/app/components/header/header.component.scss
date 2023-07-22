@@ -60,7 +60,8 @@ header {
       display: flex;
       align-items: center;
       justify-content: center;
-      svg{
+      gap: 5px;
+      svg:first-child{
         width: 20px;
         height: 20px;
         fill: #fff;

@@ -4,6 +4,7 @@ import {MessageService} from 'primeng/api';
 import {ApiService} from "../../../../services/api.service";
 import {Router} from '@angular/router';
 import {BehaviorSubjectService} from "../../../../services/behavior-subject.service";
+import {ShareService} from "../../../../services/share.service";
 
 @Component({
   selector: 'app-log-in',
@@ -14,7 +15,7 @@ export class LogInComponent implements OnInit {
   email:string = "";
   password:string = "";
 
-  constructor(private _validation: ValidationService, private messageService: MessageService,private _api:ApiService, private  router: Router, private _subject:BehaviorSubjectService) {}
+  constructor(private _validation: ValidationService, private messageService: MessageService,private _api:ApiService, private  router: Router, private _subject:BehaviorSubjectService, private _share:ShareService) {}
 
 
 
@@ -28,18 +29,14 @@ export class LogInComponent implements OnInit {
       this.messageService.add({severity:'error', summary: 'خطا', detail: 'ایمیل اشتباهه'});
     } else if(!this._validation.isEmpty(this.password)){
       this.messageService.add({severity:'error', summary: 'خطا', detail: 'کلمه عبور خالیه'});
-    }
-    // else if(!this._validation.charactersBe(this.password.length , 8)){
-    //   this.messageService.add({severity:'error', summary: 'خطا', detail: 'کلمه عبور کم تر از 8 کاراکتر است'});
-    // }
-    else {
+    } else {
       this.loading = true;
       this._api.logIn(this.email,this.password).subscribe({
         next:data => {
           this.messageService.add({severity:'success', summary: 'Success', detail: 'Message Content'});
-          this._api.logIn_data.push(data.data.token , data.data.user);
-          localStorage.setItem("logInData" , JSON.stringify(this._api.logIn_data));
-          this._subject.onChanged.next(JSON.parse(<any>localStorage.getItem("logInData")));
+          localStorage.setItem("logInData" , JSON.stringify(data.data.token));
+          this._share.token_data = data.data.user;
+          this._subject.localStorage_token.next(JSON.parse(<any>localStorage.getItem("token")));
           this.loading = false;
           this.email = "";
           this.password = "";

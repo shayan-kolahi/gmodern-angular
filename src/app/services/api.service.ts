@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 import { environment } from '../../environments/environment.prod';
 @Injectable({
@@ -12,11 +12,21 @@ export class ApiService {
 
   // logIn
   logIn(email : string, password : string){return this.http.post<any>( environment.baseUrl+'login', { email: email , password: password })}
-  logIn_data:any = [];
   // logIn
   // register
   register(name : string , email : string, password : string){return this.http.post<any>( environment.baseUrl+'register', { name: name , email: email , password: password })}
-  register_data:any = [];
   // register
+  // getUser
+  headers = new HttpHeaders({
+    'Authorization': `Bearer ${JSON.parse(<any>localStorage.getItem("logInData"))}`
+  });
+  getUser(){
+    return this.http.get<any>( environment.baseUrl+'user',{'headers':this.headers})
+  }
+  // getUser
+
+
+
+
 
 }
