@@ -36,6 +36,7 @@ export class HeaderComponent implements OnInit {
   }
   ngOnInit(): void {}
   dropdown_toggle_click(){
+
     this.dropdown_toggle = !this.dropdown_toggle
   }
 

@@ -17,6 +17,7 @@
           <span class="hidden md:flex">{{ token_data.name }}</span>
           <svg class="hidden md:flex w-4 h-4 fill-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M201 337c-9.4 9.4-24.6 9.4-33.9 0L7 177c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l143 143L327 143c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9L201 337z"/></svg>
         </button>
+
         <div class="token_data_dropdown_div" [class]="[dropdown_toggle ? 'flex' : 'hidden']">
           <div class="flex justify-center mt-3 mb-2 items-center w-full">
             <img class="w-14 h-14 rounded-full" [src]="[token_data.avatar === null ? '../../../assets/images/vector_user.jpg' : token_data.avatar]" [alt]="this.token_data.name">
