@@ -9,6 +9,7 @@ import {ApiService} from "../../services/api.service";
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  dropdown_toggle:boolean= false;
   token_data:any = false;
   constructor(private _subject: BehaviorSubjectService, private _share: ShareService, private _api: ApiService) {
     this._subject.localStorage_token.subscribe(response => {
@@ -34,4 +35,8 @@ export class HeaderComponent implements OnInit {
     )
   }
   ngOnInit(): void {}
+  dropdown_toggle_click(){
+    this.dropdown_toggle = !this.dropdown_toggle
+  }
+
 }

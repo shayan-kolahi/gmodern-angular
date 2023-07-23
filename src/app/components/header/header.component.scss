@@ -91,6 +91,40 @@ header {
         background: $secondColor;
       }
     }
+    .token_data_dropdown{
+      position: relative;
+      .token_data_dropdown_div{
+        position: absolute;
+        top: 65px;
+        left: 0;
+        overflow: hidden;
+        @apply w-60 flex-col border bg-white rounded-lg shadow sm:max-w-md;
+        .list_dropdown{
+          span{
+            color: #4b5259;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            transition: all .3s;
+            font-size: 14px;
+            cursor: pointer;
+            &:last-child{
+              border-bottom: none;
+            }
+            &:hover{
+              background: #f8fafb;
+            }
+            svg{
+              margin-left: 0.5rem;
+              width: 18px;
+              height: 18px;
+              fill: #4b5259;
+            }
+          }
+        }
+      }
+    }
   }
 }
 @media (max-width: 992px) {
