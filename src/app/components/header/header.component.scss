@@ -101,7 +101,6 @@ header {
         @apply w-60 flex-col border bg-white rounded-lg shadow sm:max-w-md;
         .list_dropdown{
           span{
-            color: #4b5259;
             display: flex;
             align-items: center;
             padding: 10px;
@@ -119,7 +118,6 @@ header {
               margin-left: 0.5rem;
               width: 18px;
               height: 18px;
-              fill: #4b5259;
             }
           }
         }
@@ -133,4 +131,6 @@ header {
     bottom: 0;
   }
 }
-
+.p-ripple{
+  display: none !important;
+}

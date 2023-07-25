@@ -5,8 +5,8 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      // IRANSansX_Medium: 'IRANSansX-Medium',
-      // IRANSansX_Regular: 'IRANSansX-Regular'
+      IRANSansWeb: 'IRANSansWeb',
+      IRANSansFaNumBold: 'IRANSansFaNum-Bold'
     },
     extend: {
       colors: {
