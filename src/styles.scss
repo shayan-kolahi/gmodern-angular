@@ -18,7 +18,7 @@ html {
 }
 main {
   min-height: 100vh;
-  margin-top: 82px;
+  margin-top: 92px;
 }
 ::-webkit-scrollbar-track {
   background-color: #fff;
@@ -42,9 +42,87 @@ main {
 .p-toast .p-toast-message .p-toast-message-content{
   font-family: $font-family-1 !important;
 }
-
+.button {
+  background: $mainColor;
+  color: #fff;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: $rounded;
+  border:1px solid $mainColor;
+  transition: all .3s;
+  font-size: .9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  svg:first-child{
+    width: 20px;
+    height: 20px;
+    fill: #fff;
+  }
+}
+.asdfghjkl{
+  font-size:3rem;
+  color:greenyellow
+}
+.a-label{
+  padding: 0.0625rem 0.65rem;
+  display: inline-flex;
+  justify-content: center;
+  font-size: .75rem;
+  font-weight: 500;
+  line-height: 1.75;
+  align-items: center;
+  border-radius: 0.75rem;
+  white-space: nowrap;
+  color: #2B2F33;
+  background-color: #F8FAFB;
+  vertical-align: middle;
+}
+.a-label.is-success{
+  background-color: #EAFAEE;
+  color: #1E7B33;
+}
+.a-label.is-warning {
+  background-color: #FFF5E5;
+  color: #A85D00;
+}
+.a-label.is-info {
+  background-color: #E8F9FC;
+  color: #0F697A;
+}
+.is-link{
+  color: #0077DB;
+  padding: 2px 5px;
+  box-shadow: none;
+  font-size: .75rem!important;
+  background-color: transparent;
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all .3s;
+  svg{
+    width: 1.3em;
+    height: 1.3em;
+    fill: #0077DB;
+  }
+  &:hover{
+    border-color: #C9E3F8;
+    background-color: #F2F9FF;
+  }
+}
+.dot3{
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
 @media (max-width: 992px) {
   main {
-    margin-top: 0;
+    margin-top: 10px;
   }
 }

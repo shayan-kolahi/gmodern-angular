@@ -24,6 +24,11 @@ export class ApiService {
     return this.http.get<any>( environment.baseUrl+'user',{'headers':this.headers})
   }
   // getUser
+  // posts
+  posts(url:string){
+    return this.http.post<any>(url , {})
+  }
+  // posts
 
 
 
