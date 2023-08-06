@@ -6,8 +6,6 @@ import { environment } from '../../environments/environment.prod';
   providedIn: 'root'
 })
 export class ApiService {
-
-
   constructor(private http: HttpClient) { }
 
   // logIn
@@ -29,6 +27,11 @@ export class ApiService {
     return this.http.post<any>(url , {})
   }
   // posts
+  // post_id
+  post_id(id:string){
+    return this.http.get<any>(environment.baseUrl+'post/'+id)
+  }
+  // post_id
 
 
 

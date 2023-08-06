@@ -26,7 +26,7 @@
           <div class="my-2 flex gap-1 flex-wrap">
             <span *ngFor="let indexPosts_data_categories of indexPosts_data.categories" class="a-label is-info">{{indexPosts_data_categories.name}}</span>
           </div>
-          <a href="" class="button w-full mt-auto">
+          <a routerLink="/post/{{indexPosts_data.id}}" class="button w-full mt-auto">
             جزئیات بیشتر
           </a>
         </div>
