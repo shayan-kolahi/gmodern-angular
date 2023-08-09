@@ -1,2 +1,23 @@
-<p>detail works!</p>
 <app-loading *ngIf="loading"></app-loading>
+<section>
+  <div class="container">
+    <div class="mb-5">
+      <div class="w-full h-full border bg-white overflow-hidden rounded-lg shadow flex items-start justify-end p-5 flex-col">
+        <img class="rounded-lg object-cover w-full" src="{{data.image.large}}" alt="{{data.title}}">
+        <div class="my-3 flex gap-1 flex-wrap">
+          <div>
+            <span class="a-label is-success">{{data.created_at.shamsi}}</span>
+          </div>
+          <span *ngFor="let categorie of data.categories" class="a-label is-info">{{categorie.name}}</span>
+        </div>
+        <h2 class="text-xl m-0 font-IRANSansFaNumBold font-bold leading-tight tracking-tight text-gray-700">{{data.title}}</h2>
+        <a rel="nofollow" target="_blank" href="{{data.source.source.url}}" class="flex my-2 items-center gap-2">
+          <img class="h-8 h-8 object-contain" src="{{data.source.source.icon}}" alt="{{data.source.source.name}}">
+          <h6 class="text-md m-0 text-justify font-bold my-2 text-gray-900">{{data.source.source.name}}</h6>
+        </a>
+        <p class="text-sm text-justify text-gray-700 mt-4">{{data.text}}</p>
+        <div class="style_html" [innerHtml]='data.html'></div>
+      </div>
+    </div>
+  </div>
+</section>

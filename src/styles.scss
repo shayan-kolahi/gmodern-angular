@@ -126,3 +126,12 @@ main {
     margin-top: 10px;
   }
 }
+.style_html {
+  *{
+    line-height: 2;
+  }
+  video,
+  img {
+    @apply w-full rounded-lg;
+  }
+}

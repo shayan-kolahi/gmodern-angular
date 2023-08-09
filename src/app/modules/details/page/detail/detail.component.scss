@@ -1,0 +1,6 @@
+.style_html {
+  @apply mt-3 text-sm text-justify text-gray-700 w-full flex flex-col gap-3;
+  img{
+    @apply w-full;
+  }
+}

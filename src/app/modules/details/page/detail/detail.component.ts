@@ -10,6 +10,9 @@ import {ApiService} from "../../../../services/api.service";
 export class DetailComponent implements OnInit {
   post_id:any;
   loading:boolean = false;
+
+  data:any;
+
   constructor(private _api: ApiService,private getId: ActivatedRoute,) {
     getId.params.subscribe((params) => {
       this.post_id = params["id"]
@@ -17,10 +20,9 @@ export class DetailComponent implements OnInit {
   }
   ngOnInit(): void {
     this.loading = true;
-    console.log(typeof this.post_id)
     this._api.post_id(this.post_id).subscribe({
       next:data => {
-        console.log(data)
+        this.data = data.data.post;
         this.loading = false;
       },
       error:err => {

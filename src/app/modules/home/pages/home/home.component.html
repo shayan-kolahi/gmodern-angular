@@ -2,7 +2,7 @@
   <div class="container">
     <div class="banner">
       <div *ngFor="let item of bannerPosts; let i = index" class="child_{{i}}">
-        <a href="" class="group w-full h-full border bg-white overflow-hidden rounded-lg shadow relative z-[2] after_black flex items-start justify-end p-5 flex-col">
+        <a routerLink="/post/{{item.id}}" class="group w-full h-full border bg-white overflow-hidden rounded-lg shadow relative z-[2] after_black flex items-start justify-end p-5 flex-col">
           <img class="group-hover:scale-110	transition-all-3 absolute z-[-1] inset-0 object-cover h-full w-full" src="{{item.image.large}}" alt="{{item.title}}">
           <h2 class="text-lg font-IRANSansFaNumBold text-white">{{item.title}}</h2>
         </a>
@@ -15,14 +15,14 @@
   <div class="container">
     <div class="latest_news">
       <h2 class="text-xl font-IRANSansFaNumBold font-bold leading-tight tracking-tight text-gray-900">آخرین اخبار</h2>
-      <div class="grid grid-cols-3 gap-4 mt-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
         <div *ngFor="let indexPosts_data of this.indexPosts_data" class="w-full h-full border bg-white overflow-hidden rounded-lg shadow flex items-start justify-end p-5 flex-col">
           <img class="rounded-lg h-52	object-cover w-full" src="{{indexPosts_data.image.large}}" alt="">
           <div>
             <span class="my-3 a-label is-success">{{indexPosts_data.created_at.shamsi}}</span>
           </div>
           <h2 class="text-lg m-0 font-IRANSansFaNumBold font-bold leading-tight tracking-tight text-gray-700">{{indexPosts_data.title}}</h2>
-          <p class="text-sm text-justify mb-2 mt-2 text-gray-700 dot3">{{indexPosts_data.text}}</p>
+          <p class="text-sm text-justify my-2 text-gray-700 dot3">{{indexPosts_data.text}}</p>
           <div class="my-2 flex gap-1 flex-wrap">
             <span *ngFor="let indexPosts_data_categories of indexPosts_data.categories" class="a-label is-info">{{indexPosts_data_categories.name}}</span>
           </div>
@@ -33,7 +33,7 @@
       </div>
       <div class="w-full flex justify-center items-center mb-5 mt-4">
         <div class="btn-group flex flex-wrap flex-row-reverse">
-          <button class="btn btn-info" *ngFor="let link of indexPosts_links" (click)="btn_change_date(link.url)" [ngClass]="link.active ? 'btn-active' : ''">{{link.label}}</button>
+          <button class="btn btn-info" *ngFor="let link of indexPosts_links" (click)="btn_change_date(link.url)" [ngClass]="link.active ? 'btn-active' : ''" [innerHtml]='link.label'></button>
         </div>
       </div>
     </div>
