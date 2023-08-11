@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {ApiService} from "../../../../services/api.service";
 
 @Component({
@@ -13,7 +13,7 @@ export class DetailComponent implements OnInit {
 
   data:any;
 
-  constructor(private _api: ApiService,private getId: ActivatedRoute,) {
+  constructor(private _api: ApiService,private getId: ActivatedRoute,private  router: Router) {
     getId.params.subscribe((params) => {
       this.post_id = params["id"]
     })
@@ -26,7 +26,8 @@ export class DetailComponent implements OnInit {
         this.loading = false;
       },
       error:err => {
-        console.log(err)
+        console.log(err);
+        this.router.navigateByUrl('/500');
       },
     })
   }

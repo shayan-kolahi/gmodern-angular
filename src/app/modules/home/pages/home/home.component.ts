@@ -1,5 +1,6 @@
-import {Component, EventEmitter, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ApiService} from "../../../../services/api.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,7 @@ import {ApiService} from "../../../../services/api.service";
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  constructor(private _api:ApiService) {}
+  constructor(private _api:ApiService,private  router: Router) {}
   loading:boolean= false;
   data:any;
   bannerPosts:any;
@@ -24,7 +25,8 @@ export class HomeComponent implements OnInit {
         this.loading = false;
       },
       error:err => {
-        console.log(err)
+        console.log(err);
+        this.router.navigateByUrl('/500');
       }
     })
   }
