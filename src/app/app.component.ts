@@ -13,6 +13,8 @@ export class AppComponent implements OnInit{
         if(e.urlAfterRedirects === '/404' || e.urlAfterRedirects === '/500' || e.urlAfterRedirects.indexOf("admin") === 1){
           this.isActive = false;
         }
+      } else {
+        this.isActive = true;
       }
     })
   }
