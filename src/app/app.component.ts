@@ -10,11 +10,7 @@ export class AppComponent implements OnInit{
   constructor(private router: Router) {
     router.events.subscribe(e => {
       if (e instanceof NavigationEnd){
-        if(e.urlAfterRedirects === '/404' || e.urlAfterRedirects === '/500' || e.urlAfterRedirects.indexOf("admin") === 1){
-          this.isActive = false;
-        }
-      } else {
-        this.isActive = true;
+        this.isActive = !(e.urlAfterRedirects === '/404' || e.urlAfterRedirects === '/500' || e.urlAfterRedirects.indexOf("admin") == 1);
       }
     })
   }
