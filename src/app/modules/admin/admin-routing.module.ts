@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {HomeComponent} from "./page/home/home.component";
 import {MainComponent} from "./page/main/main.component";
+import {UsersComponent} from "./page/users/users.component";
 
 const routes: Routes = [
   {
@@ -10,6 +11,7 @@ const routes: Routes = [
     children: [
       {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
       {path: "dashboard", component: HomeComponent},
+      {path: "users", component: UsersComponent},
     ]
   },
 ];

@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ApiService} from "../../../../services/api.service";
 import {Router} from "@angular/router";
+import {environment} from "../../../../../environments/environment.prod";
+
 
 @Component({
   selector: 'app-home',
@@ -31,7 +33,7 @@ export class HomeComponent implements OnInit {
     })
   }
   ngOnInit(): void {
-    this.getData('https://api.gmodern.ir/api/get/posts?page=1');
+    this.getData(environment.baseUrl+'get/posts?page=1');
   }
   btn_change_date(url_btn:string){
     window.scroll(0,0);

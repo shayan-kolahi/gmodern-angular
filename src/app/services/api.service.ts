@@ -15,11 +15,11 @@ export class ApiService {
   register(name : string , email : string, password : string){return this.http.post<any>( environment.baseUrl+'register', { name: name , email: email , password: password })}
   // register
   // getUser
-  headers = new HttpHeaders({
+  headers_getUser = new HttpHeaders({
     'Authorization': `Bearer ${JSON.parse(<any>localStorage.getItem("logInData"))}`
   });
   getUser(){
-    return this.http.get<any>( environment.baseUrl+'user',{'headers':this.headers})
+    return this.http.get<any>( environment.baseUrl+'user',{'headers':this.headers_getUser})
   }
   // getUser
   // posts
@@ -32,6 +32,20 @@ export class ApiService {
     return this.http.get<any>(environment.baseUrl+'post/'+id)
   }
   // post_id
+
+
+  // ADMIN
+
+  // admin_user
+  headers_admin_user = new HttpHeaders({
+    'Authorization': `Bearer ${JSON.parse(<any>localStorage.getItem("logInData"))}`
+  });
+  admin_user(){
+    return this.http.get<any>(environment.baseUrl+'admin/user',{'headers':this.headers_admin_user})
+  }
+  // admin_user
+
+  // ADMIN
 
 
 

@@ -19,7 +19,7 @@ export class SidebarComponent implements OnInit {
     },
     {
       name: "لیست کاربران",
-      link: "/admin/asd",
+      link: "/admin/users",
       img: 'user.svg'
     },
   ]
