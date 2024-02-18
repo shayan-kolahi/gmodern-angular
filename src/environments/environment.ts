@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'https://ss1.iran.liara.run/api/'
+  baseUrl: 'https://api-gmodern.shayankolahi.ir/api/'
 };
 
 /*
